@@ -27,10 +27,7 @@ using UnityEngine.Networking;
 
 namespace Leaderboards
 {
-
-
-    [Serializable]
-    public class LeaderboardResponseException : Exception { }
+    
 
     /**
     This is used internally, don't worry about it :)
@@ -159,7 +156,7 @@ namespace Leaderboards
         }
 
     }
-    
+
     /**
      * Base class for all of the responses from operations. Includes a value of
      * if it was an error or not.
@@ -329,7 +326,6 @@ namespace Leaderboards
         private const string BASE_URL = "https://v6tbbzg231.execute-api.us-east-1.amazonaws.com/prod";
         private const string APP_ID = "com.anthonydito.leaderboarddemo";
 
-
         // The human readable name of the leaderboard.
         public abstract string Name { get; }
 
@@ -338,7 +334,6 @@ namespace Leaderboards
         
         // The unique identifier of this leaderboard
         public abstract string Id { get; }
-
         // Fetches the top records of a leaderboard.
         public IEnumerator TopRecords(int numRecords)
         {
@@ -465,7 +460,7 @@ namespace Leaderboards
     */
     public class LowerIsBetterLeaderboard : Leaderboard {
         public override string Name => "Lower is Better";
-        public override bool LowerIsBetter => false;
+        public override bool LowerIsBetter => true;
         public override string Id => "LowerIsBetterLeaderboard";
     }
     
